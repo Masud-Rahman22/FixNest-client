@@ -130,7 +130,7 @@ function NavBar() {
                             textDecoration: 'none',
                         }}
                     >
-                        <img className='lg:mr-10' src={logo} alt="logo" width={70} height={70} />
+                        <img className='lg:mr-10' src={logo} alt="logo" width={100} height={100} />
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
