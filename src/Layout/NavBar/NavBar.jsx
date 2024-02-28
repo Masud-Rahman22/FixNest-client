@@ -10,9 +10,8 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-
+import MenuItem from '@mui/material/MenuItem'
+import logo from '../../../public/assets/logo/logo.png'
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -36,10 +35,9 @@ function NavBar() {
     };
 
     return (
-        <AppBar position="static">
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <AppBar position="static" elevation={0}>
+            <Container maxWidth="xl" sx={{ backgroundColor: "white" }} >
+                <Toolbar >
                     <Typography
                         variant="h6"
                         noWrap
@@ -51,11 +49,11 @@ function NavBar() {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: 'white',
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        <img className='lg:mr-10' src={logo} alt="logo" width={70} height={70} />
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -74,27 +72,26 @@ function NavBar() {
                             anchorEl={anchorElNav}
                             anchorOrigin={{
                                 vertical: 'bottom',
-                                horizontal: 'left',
+                                horizontal: 'center',
                             }}
                             keepMounted
                             transformOrigin={{
                                 vertical: 'top',
-                                horizontal: 'left',
+                                horizontal: 'center',
                             }}
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
                             sx={{
-                                display: { xs: 'block', md: 'none' },
+                                display: { xs: 'block', md: 'none' }
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page} onClick={handleCloseNavMenu} className='text-black'>
+                                    <Typography textAlign="center" >{page}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
                         variant="h5"
                         noWrap
@@ -111,18 +108,18 @@ function NavBar() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        <img src={logo} alt="" width={70} height={70} />
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'center' } }}>
+                        <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'black', display: 'block' }}>
+                            Products
+                        </Button>
+                        <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'black', display: 'block' }}>
+                            Pricing
+                        </Button>
+                        <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'black', display: 'block' }}>
+                            Blog
+                        </Button>
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
