@@ -8,14 +8,91 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem'
 import logo from '../../../public/assets/logo/logo.png'
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import { NavLink } from 'react-router-dom';
 
 function NavBar() {
+
+    const settings = <>
+        <li><NavLink to="/profile">Profile</NavLink></li>
+        <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+        <li><NavLink to="/logout">Logout</NavLink></li>
+    </>
+
+    const navLinks = <>
+        <li>
+            <NavLink
+                to="/"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "#009688" : ""
+                }
+            >
+                Home
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/services"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : "#009688"
+                }
+            >
+                Services
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/about"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : "#009688"
+                }
+            >
+                About
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/pricing"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : "#009688"
+                }
+            >
+                Pricing
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/appointment"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : "#009688"
+                }
+            >
+                Appointment Booking
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/contactUs"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : "#009688"
+                }
+            >
+                Contact Us
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/terms&conditions"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : "#009688"
+                }
+            >
+                Terms & Conditions
+            </NavLink>
+        </li>
+    </>
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -85,11 +162,9 @@ function NavBar() {
                                 display: { xs: 'block', md: 'none' }
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu} className='text-black'>
-                                    <Typography textAlign="center" >{page}</Typography>
-                                </MenuItem>
-                            ))}
+                            <ul className='list-none flex gap-4 text-black'>
+                                {navLinks}
+                            </ul>
                         </Menu>
                     </Box>
                     <Typography
@@ -111,15 +186,9 @@ function NavBar() {
                         <img src={logo} alt="" width={70} height={70} />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'center' } }}>
-                        <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'black', display: 'block' }}>
-                            Products
-                        </Button>
-                        <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'black', display: 'block' }}>
-                            Pricing
-                        </Button>
-                        <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'black', display: 'block' }}>
-                            Blog
-                        </Button>
+                        <ul className='list-none flex gap-4 text-black'>
+                            {navLinks}
+                        </ul>
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
@@ -144,11 +213,9 @@ function NavBar() {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
+                            <ul className='list-none p-4 space-y-3'>
+                                {settings}
+                            </ul>
                         </Menu>
                     </Box>
                 </Toolbar>
