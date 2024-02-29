@@ -10,54 +10,56 @@ import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import Typography from '@mui/joy/Typography';
 import Check from '@mui/icons-material/Check';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-
+import Lottie from 'lottie-react';
+import animation from '../../../public/assets/pricing/Animation - 1709236587546.json'
 export default function Pricing() {
     return (
+        <div className='flex items-center justify-center mx-10 my-20'>
             <Box
             sx={{
                 width: '100%',
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))',
-                gap: 5,
+                gap: 3,
                 
             }}
         >
-            <Card size="lg" variant="outlined">
+            <Card sx={{bgcolor: 'neutral.900'}} size="lg" variant="outlined">
                 <Chip size="sm" variant="outlined" color="neutral">
                     BASIC
                 </Chip>
-                <Typography level="h2">Professional</Typography>
+                <Typography textColor='neutral.50' level="h2">Basic Repair Package</Typography>
                 <Divider inset="none" />
                 <List size="sm" sx={{ mx: 'calc(-1 * var(--ListItem-paddingX))' }}>
-                    <ListItem>
+                    <ListItem sx={{color: 'neutral.50'}}>
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        Virtual Credit Cards
+                        Screen or Battery Replacement
                     </ListItem>
-                    <ListItem>
+                    <ListItem sx={{color: 'neutral.50'}}>
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        Financial Analytics
+                        Diagnostic Check
                     </ListItem>
-                    <ListItem>
+                    <ListItem sx={{color: 'neutral.50'}}>
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        Checking Account
+                        30-Day Warranty
                     </ListItem>
-                    <ListItem>
+                    <ListItem sx={{color: 'neutral.50'}}>
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        API Integration
+                        Basic Support
                     </ListItem>
                 </List>
                 <Divider inset="none" />
                 <CardActions>
-                    <Typography level="title-lg" sx={{ mr: 'auto' }}>
-                        3.990€{' '}
+                    <Typography textColor="neutral.50" level="title-lg" sx={{ mr: 'auto' }}>
+                    $49.99{' '}
                         <Typography fontSize="sm" textColor="text.tertiary">
                             / month
                         </Typography>
@@ -76,12 +78,12 @@ export default function Pricing() {
                 variant="solid"
                 color="neutral"
                 invertedColors
-                sx={{ bgcolor: 'neutral.900' }}
+                sx={{ bgcolor: 'focusVisible' }}
             >
                 <Chip size="sm" variant="outlined">
-                    MOST POPULAR
+                Plus
                 </Chip>
-                <Typography level="h2">Unlimited</Typography>
+                <Typography level="h2">Plus Repair Package</Typography>
                 <Divider inset="none" />
                 <List
                     size="sm"
@@ -95,37 +97,37 @@ export default function Pricing() {
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        Virtual Credit Cards
+                        Screen or Battery Replacement
                     </ListItem>
                     <ListItem>
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        Financial Analytics
+                        Diagnostic Check
                     </ListItem>
                     <ListItem>
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        Checking Account
+                        Camera Repair
                     </ListItem>
                     <ListItem>
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        API Integration
+                        60-Day Warranty
                     </ListItem>
                     <ListItem>
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        Cancel Anytime
+                        Free Screen Protector
                     </ListItem>
                 </List>
                 <Divider inset="none" />
                 <CardActions>
                     <Typography level="title-lg" sx={{ mr: 'auto' }}>
-                        5.990€{' '}
+                    $89.99{' '}
                         <Typography fontSize="sm" textColor="text.tertiary">
                             / month
                         </Typography>
@@ -133,55 +135,79 @@ export default function Pricing() {
                     <Button endDecorator={<KeyboardArrowRight />}>Start now</Button>
                 </CardActions>
             </Card>
-            <Card size="lg" variant="outlined">
-                <Chip size="sm" variant="outlined" color="neutral">
-                    BASIC
+            <Card
+                size="lg"
+                variant="solid"
+                color="neutral"
+                invertedColors
+                sx={{ bgcolor: 'primary.700' }}
+            >
+                <Chip size="sm" variant="outlined">
+                    PRO
                 </Chip>
-                <Typography level="h2">Professional</Typography>
+                <Typography level="h2">Pro Repair Package</Typography>
                 <Divider inset="none" />
-                <List size="sm" sx={{ mx: 'calc(-1 * var(--ListItem-paddingX))' }}>
+                <List
+                    size="sm"
+                    sx={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr 1fr',
+                        mx: 'calc(-1 * var(--ListItem-paddingX))',
+                    }}
+                >
                     <ListItem>
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        Virtual Credit Cards
+                        Screen and Battery Replacement
                     </ListItem>
                     <ListItem>
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        Financial Analytics
+                        Diagnostic Check
                     </ListItem>
                     <ListItem>
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        Checking Account
+                        Camera and Water Damage Repair
                     </ListItem>
                     <ListItem>
                         <ListItemDecorator>
                             <Check />
                         </ListItemDecorator>
-                        API Integration
+                        Priority Service
+                    </ListItem>
+                    <ListItem>
+                        <ListItemDecorator>
+                            <Check />
+                        </ListItemDecorator>
+                        Priority Service
+                    </ListItem>
+                    <ListItem>
+                        <ListItemDecorator>
+                            <Check />
+                        </ListItemDecorator>
+                        90-Day Warranty
                     </ListItem>
                 </List>
                 <Divider inset="none" />
                 <CardActions>
                     <Typography level="title-lg" sx={{ mr: 'auto' }}>
-                        3.990€{' '}
+                    $129.99{' '}
                         <Typography fontSize="sm" textColor="text.tertiary">
                             / month
                         </Typography>
                     </Typography>
-                    <Button
-                        variant="soft"
-                        color="neutral"
-                        endDecorator={<KeyboardArrowRight />}
-                    >
-                        Start now
-                    </Button>
+                    <Button endDecorator={<KeyboardArrowRight />}>Start now</Button>
                 </CardActions>
             </Card>
         </Box>
+        <div>
+            <Lottie animationData={animation}></Lottie>
+        </div>
+        </div>
+            
     );
 }
