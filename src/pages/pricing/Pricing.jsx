@@ -14,6 +14,8 @@ import Lottie from 'lottie-react';
 import animation from '../../../public/assets/pricing/Animation - 1709236587546.json'
 export default function Pricing() {
     return (
+        <div>
+            <h1 className="font-inter font-extrabold text-4xl text-center mt-10">Pricing</h1>
         <div className='flex items-center justify-center mx-10 my-20'>
             <Box
             sx={{
@@ -206,6 +208,7 @@ export default function Pricing() {
         </Box>
         <div>
             <Lottie animationData={animation}></Lottie>
+        </div>
         </div>
         </div>
             
