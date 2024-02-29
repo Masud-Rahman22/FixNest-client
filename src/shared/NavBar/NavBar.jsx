@@ -25,7 +25,7 @@ function NavBar() {
             <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "#009688" : ""
+                    isPending ? "pending" : isActive ? "#009688 font-bold" : ""
                 }
             >
                 Home
@@ -35,7 +35,7 @@ function NavBar() {
             <NavLink
                 to="/services"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : "#009688"
+                    isPending ? "pending" : isActive ? "active" : "#009688 font-bold"
                 }
             >
                 Services
@@ -43,19 +43,9 @@ function NavBar() {
         </li>
         <li>
             <NavLink
-                to="/about"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : "#009688"
-                }
-            >
-                About
-            </NavLink>
-        </li>
-        <li>
-            <NavLink
                 to="/pricing"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : "#009688"
+                    isPending ? "pending" : isActive ? "active" : "#009688 font-bold"
                 }
             >
                 Pricing
@@ -65,7 +55,7 @@ function NavBar() {
             <NavLink
                 to="/appointment"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : "#009688"
+                    isPending ? "pending" : isActive ? "active" : "#009688 font-bold"
                 }
             >
                 Appointment Booking
@@ -73,19 +63,9 @@ function NavBar() {
         </li>
         <li>
             <NavLink
-                to="/contactUs"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : "#009688"
-                }
-            >
-                Contact Us
-            </NavLink>
-        </li>
-        <li>
-            <NavLink
                 to="/terms&conditions"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : "#009688"
+                    isPending ? "pending" : isActive ? "active" : "#009688 font-bold"
                 }
             >
                 Terms & Conditions

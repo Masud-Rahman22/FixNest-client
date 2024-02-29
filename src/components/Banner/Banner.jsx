@@ -5,10 +5,10 @@ const Banner = () => {
     return (
         <div>
             <div className="flex flex-row-reverse justify-between items-center mx-20">
-                <div className="w-[900px]">
+                <div className="w-[1200px]">
                     <Lottie animationData={animation6}></Lottie>
                 </div>
-                <div className="font-inter space-y-4 mt-10">
+                <div className="font-inter space-y-4">
                     <h1 className="text-6xl font-extrabold">Don't Worry.</h1>
                     <h1 className="text-6xl font-extrabold text-blue-400">We'll fix it.</h1>
                     <p className="text-xl font-normal w-10/12 text-blue-900 pt-5 pb-10">Welcome to Our <span className="text-blue-900">Fix</span><span className="text-blue-400">Nest</span>! Trust Us to Bring Your Phone Back to Life with Expert Service and Care!</p>

@@ -12,25 +12,35 @@ const Footer = () => {
                         <img className='w-[150px] h-[150px]' src={logo} alt="" />
                     </p>
                     <p id='call-us'>
-                        Call us for any question: <br /> <span> +88 01704206969</span>
+                        Call us for any question: <br /> <span> +88 01850556560</span>
                     </p>
-                    <p> Level-5, 34, Awal Centre, Banani, Dhaka</p>
-                    <p>yourdomain@info.com</p>
+                    <p>Dewbhog panir tanki, Narayanganj, Dhaka</p>
+                    <p>masudrhmn6560@gmail.com</p>
                     <div className='footer-social-icons'>
                         <FaFacebook className="social-icon" />
                         <FaInstagram className="social-icon"/>
                         <FaTwitter className="social-icon"/>
                         <FaLinkedin className="social-icon"/>
                     </div>
-                    <p>© {year} iRepair. Privacy Policy</p>
+                    <p className='backdrop-blur-sm w-56'>© {year} <span className="text-blue-900">Fix</span><span className="text-blue-400">Nest</span>. Privacy Policy</p>
                 </div>
-                <div className='footer-right-content mt-32'>
+                
+                <div className='footer-right-content mb-16'>
+                <div className=''>
+                <ul className='flex gap-3 pb-10'>
+                        <li className='text-xl font-inter font-medium'>Home</li>
+                        <li className='text-xl font-inter font-medium'>Services</li>
+                        <li className='text-xl font-inter font-medium'>Pricing</li>
+                        <li className='text-xl font-inter font-medium'>Booking</li>
+                        <li className='text-xl font-inter font-medium'>Terms & Conditions</li>
+                    </ul>
+                </div>
                     <h1 className='text-black'>Subscribe to Newsletter</h1>
-                    <p>Sign up for our e-mail and be the first to know about our special offers!</p>
+                    <p className='backdrop-blur-sm w-3/4'>Sign up for our e-mail and be the first to know about our special offers!</p>
 
                     <div className='footer-input'>
                         <input type='text' placeholder='Enter your E-mail' />
-                        <button>Subscribe</button>
+                        <button className='backdrop-blur-sm'>Subscribe</button>
                     </div>
                     {/* <div className='footer-link-container backdrop-blur-sm'>
                         <div>
@@ -56,7 +66,7 @@ const Footer = () => {
                 </div>
             </footer>
             <footer className='footer-mobile'>
-                <p>© {year} iRepair. Privacy Policy</p>
+                <p className='backdrop-blur-sm'>© {year} <span className="text-blue-900">Fix</span><span className="text-blue-400">Nest</span>. Privacy Policy</p>
             </footer>
         </>
     );
