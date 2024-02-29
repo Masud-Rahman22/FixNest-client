@@ -1,0 +1,143 @@
+.footer-desktop {
+    height: 90vh;
+    width: 100%;
+    background:
+        url(../../../public/assets/footer/footer-2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.footer-mobile {
+    display: none;
+}
+
+.footer-left-content {
+    height: 100%;
+    width: 50%;
+    padding: 3rem 5rem;
+}
+
+.footer-left-content>p {
+    margin-bottom: 1.5rem;
+    color: var(--off-black);
+}
+
+.footer-logo {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--off-black);
+}
+
+.footer-logo>small {
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+#call-us {
+    color: var(--gray);
+}
+
+#call-us>span {
+    font-size: 2.5rem;
+    color: var(--off-black);
+}
+
+.cell-number {
+    font-size: 2.5rem;
+    color: var(--off-black);
+    margin-bottom: 1rem;
+}
+
+.footer-social-icons {
+    display: flex;
+    margin-bottom: 10rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    font-size: 2rem;
+    margin-right: 2rem;
+    color: var(--off-black);
+}
+
+.footer-right-content {
+    height: 100%;
+    width: 50%;
+    padding-top: 3.5rem;
+    padding-right: 5rem;
+}
+
+.footer-right-content>h1 {
+    color: var(--off-black);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-right-content>p {
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+.footer-link-container {
+    display: flex;
+}
+
+.footer-link-container>div {
+    margin-right: 2rem;
+}
+
+.footer-link-container>div>ul>li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-input {
+    margin: 2.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer-input>input {
+    height: 60px;
+    width: 400px;
+    border: 1px solid var(--gray);
+    outline: none;
+    padding-left: 30px;
+    font-size: 1.1rem;
+    -webkit-border-top-left-radius: 50px;
+    -webkit-border-bottom-left-radius: 50px;
+    -moz-border-radius-topleft: 50px;
+    -moz-border-radius-bottomleft: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.footer-input>button {
+    height: 60px;
+    width: 100px;
+    border: 1px solid var(--gray);
+    background-color: var(--light-cyan);
+    cursor: pointer;
+    -webkit-border-top-right-radius: 50px;
+    -webkit-border-bottom-right-radius: 50px;
+    -moz-border-radius-topright: 50px;
+    -moz-border-radius-bottomright: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+@media only screen and (max-width: 415px) {
+    .footer-desktop {
+        display: none;
+    }
+
+    .footer-mobile {
+        display: block;
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
