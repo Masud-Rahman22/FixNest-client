@@ -11,13 +11,25 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import logo from '../../../public/assets/logo/logo.png'
 import { NavLink } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import auth from '../../utils/firebase.config';
+import { logOut } from '../../redux/features/user/userSlice';
+import { useDispatch } from 'react-redux';
+import { useContext } from 'react';
+import { AuthContext } from '../../../Providers/AuthProvider';
 
 function NavBar() {
+    const {user} = useContext(AuthContext)
+    const dispatch = useDispatch()
+    const handleLogout = () =>{
+        signOut(auth)
+        dispatch(logOut())
+    }
 
     const settings = <>
         <li><NavLink to="/profile">Profile</NavLink></li>
         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
-        <li><NavLink to="/logout">Logout</NavLink></li>
+        <button onClick={handleLogout}>Logout</button>
     </>
 
     const navLinks = <>
@@ -194,7 +206,7 @@ function NavBar() {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="User's picture" src={user?.photoURL} />
                             </IconButton>
                         </Tooltip>
                         <Menu

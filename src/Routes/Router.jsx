@@ -10,6 +10,7 @@ import Terms_Cond from "../components/terms&conditions/Terms_Cond";
 import OurWork from "../components/our_work/OurWork";
 import Login from "../pages/login/Login";
 import SignUp from "../pages/signUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
     {
@@ -31,7 +32,9 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/terms&conditions",
-                element: <Terms_Cond></Terms_Cond>
+                element: <PrivateRoute>
+                    <Terms_Cond></Terms_Cond>
+                </PrivateRoute>
             },
             {
                 path: "/ourWork",
