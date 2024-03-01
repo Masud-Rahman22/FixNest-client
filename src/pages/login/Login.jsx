@@ -90,7 +90,7 @@ const Login = () => {
                         Login
                     </button>
                     <p className="block mt-4 font-sans text-base antialiased font-normal leading-relaxed text-center text-gray-700">
-                        Don't have an account? 
+                        Do not have an account? 
                         <Link to="/signUp" className="font-medium text-gray-900">
                             Sign In
                         </Link>
