@@ -81,6 +81,16 @@ function NavBar() {
                 Terms & Conditions
             </NavLink>
         </li>
+        <li>
+            <NavLink
+                to="/login"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : "#009688 font-bold"
+                }
+            >
+                Login
+            </NavLink>
+        </li>
     </>
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);

@@ -8,6 +8,8 @@ import Pricing from "../pages/pricing/Pricing";
 import AppointmentBooking from "../components/appointment_booking/AppointmentBooking";
 import Terms_Cond from "../components/terms&conditions/Terms_Cond";
 import OurWork from "../components/our_work/OurWork";
+import Login from "../pages/login/Login";
+import SignUp from "../pages/signUp/SignUp";
 
 const Router = createBrowserRouter([
     {
@@ -34,6 +36,14 @@ const Router = createBrowserRouter([
             {
                 path: "/ourWork",
                 element: <OurWork></OurWork>
+            },
+            {
+                path: "/login",
+                element: <Login></Login>
+            },
+            {
+                path: "/signUp",
+                element: <SignUp></SignUp>
             },
         ]
     },
