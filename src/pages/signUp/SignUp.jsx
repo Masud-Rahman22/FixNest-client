@@ -5,8 +5,12 @@ import { useEffect, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { createUser } from '../../redux/features/user/userSlice';
+import { createUser, googleUser } from '../../redux/features/user/userSlice';
 import toast, {Toaster} from 'react-hot-toast';
+import googleAnimation from '../../../public/assets/login/google/Animation - 1709367506310.json'
+import { GoogleAuthProvider } from "firebase/auth";
+
+const provider = new GoogleAuthProvider();
 const SignUp = () => {
     const { handleSubmit, register, control } = useForm();
     const password = useWatch({ control, name: 'password' });
@@ -48,13 +52,24 @@ const SignUp = () => {
             navigate('/login')
     };
 
+    const handleGoogleLogin = () =>{
+        dispatch(googleUser(provider))
+        .then(()=>{
+                toast.success('Welcome! you are logged in')
+                navigate('/')
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }
+
     return (
         <div className="flex items-center justify-between">
             <Toaster></Toaster>
-            <div className="ml-32 flex-1">
+            <div className="ml-32 flex-1 lg:pb-52">
                 <Lottie animationData={animationLogin}></Lottie>
             </div>
-            <div className="relative flex flex-col text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border flex-1 lg:pl-32">
+            <div className="relative flex flex-col text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border flex-1 lg:pl-32 lg:mt-10">
                 <h4 className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
                     Sign Up
                 </h4>
@@ -143,13 +158,20 @@ const SignUp = () => {
                         type="submit">
                         sign up
                     </button>
-                    <p className="block mt-4 font-sans text-base antialiased font-normal leading-relaxed text-center text-gray-700">
+                </form>
+                    <div className='lg:mr-60'>
+                    <div className='flex justify-center items-center'>
+                        <button onClick={handleGoogleLogin}>
+                            <Lottie className='w-[70px] h-[70px]' animationData={googleAnimation}></Lottie>
+                        </button>
+                    </div>
+                    <p className="block font-sans text-base antialiased font-normal leading-relaxed text-center text-gray-700">
                         Already have an account?
                         <Link to="/login" className="font-medium text-gray-900">
                             Login
                         </Link>
                     </p>
-                </form>
+                    </div>
             </div>
         </div>
     );

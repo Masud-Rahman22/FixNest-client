@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
 import auth from "../../../utils/firebase.config";
+
 
 const initialState = {
     name: "",
@@ -33,6 +34,16 @@ export const loginUser = createAsyncThunk(
             email: data.user.email,
         }
     })
+export const googleUser = createAsyncThunk(
+    "userSlice/googleUser",
+    async (provider) => {
+        const data = await signInWithPopup(auth,provider)
+        console.log(data)
+        return {
+            email: data.user.email,
+            name: data.user.displayName,
+        }
+    })
 
 const userSlice = createSlice({
     name: "userSlice",
@@ -45,9 +56,9 @@ const userSlice = createSlice({
         toggleLoading: (state, { payload }) => {
             state.isLoading = payload
         },
-        logOut: (state)=>{
-            state.name='',
-            state.email=''
+        logOut: (state) => {
+            state.name = '',
+                state.email = ''
         }
     },
     extraReducers: (builder) => {
@@ -91,7 +102,28 @@ const userSlice = createSlice({
                 state.error = '';
                 state.email = '';
             })
+            .addCase(googleUser.pending, (state) => {
+                state.isLoading = true;
+                state.isError = false;
+                state.error = '';
+                state.email = '';
+                state.name = '';
+            })
+            .addCase(googleUser.rejected, (state, { action }) => {
+                state.isLoading = false;
+                state.isError = true;
+                state.error = action.error.message;
+                state.email = '';
+                state.name = "";
+            })
+            .addCase(googleUser.fulfilled, (state, { payload }) => {
+                state.isLoading = false;
+                state.isError = false;
+                state.error = '';
+                state.name = payload.name;
+                state.email = payload.email;
+            })
     }
 })
-export const {setUser,toggleLoading,logOut} = userSlice.actions;
+export const { setUser, toggleLoading, logOut } = userSlice.actions;
 export default userSlice.reducer;
