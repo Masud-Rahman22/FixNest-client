@@ -29,6 +29,7 @@ export default function Reviews() {
                     clickable: true,
                 }}
                 modules={[Pagination]}
+                loop={true}
                 className="mySwiper"
             >
                 <SwiperSlide><div className="card w-96 bg-base-100 shadow-xl">
