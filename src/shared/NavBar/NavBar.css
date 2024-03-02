@@ -1,0 +1,7 @@
+.slide-in {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover\:slide-in:hover {
+    transform: translateY(0);
+}

@@ -11,6 +11,8 @@ import OurWork from "../components/our_work/OurWork";
 import Login from "../pages/login/Login";
 import SignUp from "../pages/signUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
+import AddService from "../pages/Add_Services/AddService";
+import AllServices from "../pages/All_Services/AllServices";
 
 const Router = createBrowserRouter([
     {
@@ -39,6 +41,14 @@ const Router = createBrowserRouter([
             {
                 path: "/ourWork",
                 element: <OurWork></OurWork>
+            },
+            {
+                path: "/allServices",
+                element: <AllServices></AllServices>
+            },
+            {
+                path: "/addService",
+                element: <AddService></AddService>
             },
             {
                 path: "/login",

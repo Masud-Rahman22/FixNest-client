@@ -17,6 +17,7 @@ import { logOut } from '../../redux/features/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import "./NavBar.css"
 
 function NavBar() {
     const {user} = useContext(AuthContext)
@@ -37,7 +38,7 @@ function NavBar() {
             <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "#009688 font-bold" : ""
+                    isPending ? "pending" : isActive ? "active" : "#009688 font-bold"
                 }
             >
                 Home
@@ -45,12 +46,22 @@ function NavBar() {
         </li>
         <li>
             <NavLink
-                to="/services"
+                to="/addService"
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "active" : "#009688 font-bold"
                 }
             >
-                Services
+                Add Service
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/allServices"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : "#009688 font-bold"
+                }
+            >
+                All Services
             </NavLink>
         </li>
         <li>
@@ -142,7 +153,7 @@ function NavBar() {
                             textDecoration: 'none',
                         }}
                     >
-                        <img className='lg:mr-10' src={logo} alt="logo" width={100} height={100} />
+                        <img className='lg:mr-10 scale-100 cursor-pointer transition-all duration-200 hover:scale-110' src={logo} alt="logo" width={100} height={100} />
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
