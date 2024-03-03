@@ -32,7 +32,7 @@ const {name,type,price,picture,description} = item;
     </div>
     <div className="flex items-center justify-center flex-wrap gap-6 text-sm">
     <div className="flex items-center justify-center flex-wrap gap-6 text-sm md:text-base">
-                <button className="px-4 py-2 rounded-lg bg-[#49B2FF] hover:bg-sky-600 duration-300 hover:scale-105 text-white font-semibold font-sans">Buy now</button>
+                <button className="px-4 py-2 rounded-lg bg-[#49B2FF] hover:bg-sky-600 duration-300 hover:scale-105 text-white font-semibold font-sans">Delete Item</button>
                 <button className="flex items-center gap-2">
                 <GrDocumentUpdate />
                     <span className="text-black">Update</span>
