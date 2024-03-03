@@ -46,6 +46,26 @@ function NavBar() {
         </li>
         <li>
             <NavLink
+                to="/addAccessories"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : "#009688 font-bold"
+                }
+            >
+                Add Accessories
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/ourAccessories"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : "#009688 font-bold"
+                }
+            >
+                Our Accessories
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
                 to="/addService"
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "active" : "#009688 font-bold"

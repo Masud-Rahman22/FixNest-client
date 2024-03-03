@@ -13,6 +13,8 @@ import SignUp from "../pages/signUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import AddService from "../pages/Add_Services/AddService";
 import AllServices from "../pages/All_Services/AllServices";
+import AddAccessories from "../pages/Add_Accessories/AddAccessories";
+import OurAccessories from "../pages/Our_Accessories/OurAccessories";
 
 const Router = createBrowserRouter([
     {
@@ -41,6 +43,14 @@ const Router = createBrowserRouter([
             {
                 path: "/ourWork",
                 element: <OurWork></OurWork>
+            },
+            {
+                path: "/addAccessories",
+                element: <AddAccessories></AddAccessories>
+            },
+            {
+                path: "/ourAccessories",
+                element: <OurAccessories></OurAccessories>
             },
             {
                 path: "/allServices",

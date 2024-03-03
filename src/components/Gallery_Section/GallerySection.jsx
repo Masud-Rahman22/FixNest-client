@@ -9,7 +9,7 @@ export const GallerySection = () => {
     return (
         <div>
             <h1 className="font-inter font-extrabold text-4xl text-center mb-10 mt-20">Meet<span className="text-blue-400">-</span>Our<span className="text-blue-400">-</span>Team</h1>
-            <div className="max-w-6xl mx-auto h-[540px] md:h-[670px] flex flex-col xl:flex-row items-center overflow-hidden gap-5 lg:gap-10 relative">
+            <div className="w-full mx-auto h-[540px] md:h-[670px] flex flex-col xl:flex-row items-center overflow-hidden gap-5 lg:gap-10 relative bg-black">
                 <div className="absolute w-full h-full flex items-center justify-between z-50 px-5">
                     {/* arrow left */}
                     <button onClick={prevSlider} className="flex justify-center items-center bg-white rounded-full w-6 h-6 md:w-8 md:h-8">
