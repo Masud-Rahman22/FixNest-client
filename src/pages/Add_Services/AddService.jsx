@@ -74,7 +74,7 @@ export default function AddService() {
                         inputProps={{ 'aria-label': 'primary checkbox' }} label="Save card" sx={{ gridColumn: '1/-1', my: 1 }} />
                     <CardActions sx={{ gridColumn: '1/-1' }}>
                         <Button type="submit"  variant="solid" color="primary" disabled={!isChecked}>
-                            Add card
+                            Add Service
                         </Button>
                     </CardActions>
                     <Toaster></Toaster>
