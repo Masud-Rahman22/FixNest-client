@@ -18,7 +18,6 @@ import { useParams } from 'react-router-dom';
 
 export default function UpdateAccessories() {
     const { handleSubmit, register, reset } = useForm();
-    let counter = 0;
     const onSubmit = ({ itemName, itemType, price, itemPicture, itemDescription }) => {
     
     }
