@@ -15,6 +15,7 @@ import AddService from "../pages/Add_Services/AddService";
 import AllServices from "../pages/All_Services/AllServices";
 import AddAccessories from "../pages/Add_Accessories/AddAccessories";
 import OurAccessories from "../pages/Our_Accessories/OurAccessories";
+import UpdateAccessories from "../pages/Our_Accessories/UpdateAccessories";
 
 const Router = createBrowserRouter([
     {
@@ -59,6 +60,10 @@ const Router = createBrowserRouter([
             {
                 path: "/addService",
                 element: <AddService></AddService>
+            },
+            {
+                path: "/update/:id",
+                element: <UpdateAccessories></UpdateAccessories>
             },
             {
                 path: "/login",

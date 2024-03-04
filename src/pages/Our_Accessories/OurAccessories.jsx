@@ -1,17 +1,21 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AccessorieCard from "./AccessorieCard";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { useQuery } from "@tanstack/react-query";
 
 const OurAccessories = () => {
     const [items, setItems] = useState([])
-    useEffect(() => {
-        axios.get('http://localhost:5000/accessories')
-            .then(res => setItems(res.data))
-            .catch(err => console.error(err.message))
-    }, [])
-    console.log(items)
+    const { data: allItems = [], refetch } = useQuery({
+        queryKey: ['infoOfAsset'],
+        queryFn: async () => {
+            const res = await axios.get('http://localhost:5000/accessories')
+            setItems(res.data)
+            return res.data
+        }
+    })
+    console.log(allItems)
     return (
         <div>
             <Tabs>
@@ -27,49 +31,49 @@ const OurAccessories = () => {
                 <TabPanel>
                     <div className="grid grid-cols-4 gap-5 ml-10 my-10">
                         {
-                            items?.map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
+                            allItems?.map(item => <AccessorieCard key={item.id} item={item} refetch={refetch}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
                     <div className="grid grid-cols-4 gap-5 ml-10 my-10">
                         {
-                            items?.slice(0,10).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
+                            allItems?.slice(0,10).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
                     <div className="grid grid-cols-4 gap-5 ml-10 my-10">
                         {
-                            items?.slice(10,20).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
+                            allItems?.slice(10,20).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
                     <div className="grid grid-cols-4 gap-5 ml-10 my-10">
                         {
-                            items?.slice(20,30).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
+                            allItems?.slice(20,30).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
                     <div className="grid grid-cols-4 gap-5 ml-10 my-10">
                         {
-                            items?.slice(30,40).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
+                            allItems?.slice(30,40).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
                     <div className="grid grid-cols-4 gap-5 ml-10 my-10">
                         {
-                            items?.slice(40,50).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
+                            allItems?.slice(40,50).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
                     <div className="grid grid-cols-4 gap-5 ml-10 my-10">
                         {
-                            items?.slice(50,60).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
+                            allItems?.slice(50,60).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
