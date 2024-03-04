@@ -1,5 +1,6 @@
 // eslint-disable-next-line react/prop-types
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 import { GrDocumentUpdate } from "react-icons/gr";
 import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
@@ -11,12 +12,14 @@ const AccessorieCard = ({ item, refetch }) => {
         axios.delete(`http://localhost:5000/delete/${id}/${tableName}`)
             .then(res => {
                 console.log(res.data)
+                toast.error('item is deleted')
                 refetch()
             })
             .catch(err => console.error(err))
     }
     return (
         <div className="px-4 py-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-6 my-20 mx-auto bg-white flex flex-col">
+            <Toaster></Toaster>
             <div className="relative">
                 <div className="flex justify-between items-center absolute top-4 left-4 right-4">
                     <div className="flex items-center">

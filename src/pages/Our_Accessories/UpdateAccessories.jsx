@@ -1,36 +1,25 @@
-import Card from '@mui/joy/Card';
-import CardActions from '@mui/joy/CardActions';
-import CardContent from '@mui/joy/CardContent';
-import Checkbox from '@mui/joy/Checkbox';
-import Divider from '@mui/joy/Divider';
-import FormControl from '@mui/joy/FormControl';
-import FormLabel from '@mui/joy/FormLabel';
-import Input from '@mui/joy/Input';
-import Typography from '@mui/joy/Typography';
-import Button from '@mui/joy/Button';
-import InfoOutlined from '@mui/icons-material/InfoOutlined';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
-import { useParams } from 'react-router-dom';
 
 export default function UpdateAccessories() {
-    const { handleSubmit, register, reset } = useForm();
-    const onSubmit = ({ itemName, itemType, price, itemPicture, itemDescription }) => {
-    
-    }
-    const [isChecked, setIsChecked] = useState(false);
-
-    const handleCheckboxChange = (event) => {
-        setIsChecked(event.target.checked);
-    };
-
-    const id = useParams();
-    console.log(id)
     const [data, setData] = useState({})
-    let tableName = 'accessories'
+    const id = useParams();
+    const navigate = useNavigate()
+    let tableName = 'accessories';
+    const { handleSubmit, register } = useForm();
+    const onSubmit = ({ itemName, itemType, price, itemPicture, itemDescription }) => {
+        axios.put(`http://localhost:5000/update/${tableName}/${id.id}`, { itemName, itemType, price, itemPicture, itemDescription, id })
+            .then(res => {
+                console.log(res.data),
+                toast.success('information updated')
+                navigate('/ourAccessories')
+            })
+            .catch(err => console.error(err))
+    }
+    
     useEffect(() => {
         axios.get(`http://localhost:5000/${tableName}/${id.id}`)
             .then(res => setData(res.data))
@@ -40,57 +29,31 @@ export default function UpdateAccessories() {
     console.log(item)
     // const {name,type,price,picture,description} = item;
     return (
-        <Card
-            variant="outlined"
-            sx={{
-                maxHeight: 'max-content',
-                maxWidth: '100%',
-                mx: '70px',
-                my: '50px',
-                // to make the demo resizable
-                overflow: 'auto',
-                resize: 'horizontal',
-            }}
-        >
-
-            <Typography level="title-lg" startDecorator={<InfoOutlined />}>
-                Add new Accessories
-            </Typography>
-            <Divider inset="none" />
-            <CardContent
-            >
-                <form onSubmit={handleSubmit(onSubmit)} className='grid grid-cols-2 gap-6'>
-                    <FormControl sx={{ gridColumn: '1/-1' }}>
-                        <FormLabel>Item Name</FormLabel>
-                        <Input type='text' {...register("itemName")} value={item.name}/>
-                    </FormControl>
-                    <FormControl sx={{ gridColumn: '1/-1' }}>
-                        <FormLabel>Item type</FormLabel>
-                        <Input type='text' {...register("itemType")} value={item.type}/>
-                    </FormControl>
-                    <FormControl>
-                        <FormLabel>Price</FormLabel>
-                        <Input type='number' {...register("price")} endDecorator={<CreditCardIcon />} value={item.price}/>
-                    </FormControl>
-                    <FormControl>
-                        <FormLabel>Picture URL</FormLabel>
-                        <Input type='text' {...register("itemPicture")} value={item.picture}/>
-                    </FormControl>
-                    <FormControl sx={{ gridColumn: '1/-1' }}>
-                        <FormLabel>Item Description</FormLabel>
-                        <Input {...register("itemDescription")} type="text" placeholder="Enter some information" value={item.description}/>
-                    </FormControl>
-                    <Checkbox checked={isChecked}
-                        onChange={handleCheckboxChange}
-                        inputProps={{ 'aria-label': 'primary checkbox' }} label="Save card" sx={{ gridColumn: '1/-1', my: 1 }} />
-                    <CardActions sx={{ gridColumn: '1/-1' }}>
-                        <Button type="submit" variant="solid" color="primary" disabled={!isChecked}>
-                            Add Item
-                        </Button>
-                    </CardActions>
-                    <Toaster></Toaster>
-                </form>
-            </CardContent>
-        </Card>
+        <form onSubmit={handleSubmit(onSubmit)} className="w-3/5 md:w-11/12 mx-auto mt-16 h-[50vh]">
+            <Toaster></Toaster>
+        <div className="relative z-0 w-full mb-6 group">
+            <input type="text" {...register('itemName')} defaultValue={item?.name} id="name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+            <label htmlFor="floating_password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Item Name</label>
+        </div>
+        <div className="relative z-0 w-full mb-6 group">
+            <input type="text" {...register('itemType')} defaultValue={item?.type} id="name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+            <label htmlFor="floating_password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Item Type</label>
+        </div>
+        <div className="relative z-0 w-full mb-6 group">
+            <input type="text" {...register('itemDescription')} defaultValue={item?.description} id="name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+            <label htmlFor="floating_password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Item Description</label>
+        </div>
+        <div className="grid md:grid-cols-2 md:gap-6">
+        <div className="relative z-0 w-full mb-6 group">
+            <input type="number" {...register('price')} defaultValue={item?.price} id="email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+            <label htmlFor="floating_repeat_password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Price</label>
+        </div>
+        <div className="relative z-0 w-full mb-6 group">
+            <input type="text" {...register('itemPicture')} defaultValue={item?.picture} id="photo" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+            <label htmlFor="floating_repeat_password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Picture URL</label>
+        </div>
+        </div>
+        <button type="submit" className="p-2 w-full text-white bg-blue-400">Update Item Information</button>
+    </form>
     );
 }
