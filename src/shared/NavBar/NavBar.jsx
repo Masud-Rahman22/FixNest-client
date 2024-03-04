@@ -116,6 +116,16 @@ function NavBar() {
         </li>
         <li>
             <NavLink
+                to="/faq"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : "#009688 font-bold"
+                }
+            >
+                FAQs
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
                 to="/terms&conditions"
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "active" : "#009688 font-bold"

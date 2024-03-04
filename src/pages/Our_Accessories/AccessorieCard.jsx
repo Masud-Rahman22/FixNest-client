@@ -18,7 +18,7 @@ const AccessorieCard = ({ item, refetch }) => {
             .catch(err => console.error(err))
     }
     return (
-        <div className="px-4 py-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-6 my-20 mx-auto bg-white flex flex-col">
+        <div className="px-4 py-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-6 mx-auto bg-white flex flex-col">
             <Toaster></Toaster>
             <div className="relative">
                 <div className="flex justify-between items-center absolute top-4 left-4 right-4">

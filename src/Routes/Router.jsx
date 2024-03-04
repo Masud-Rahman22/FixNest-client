@@ -16,6 +16,7 @@ import AllServices from "../pages/All_Services/AllServices";
 import AddAccessories from "../pages/Add_Accessories/AddAccessories";
 import OurAccessories from "../pages/Our_Accessories/OurAccessories";
 import UpdateAccessories from "../pages/Our_Accessories/UpdateAccessories";
+import FAQ from "../pages/FAQs/FAQ";
 
 const Router = createBrowserRouter([
     {
@@ -60,6 +61,10 @@ const Router = createBrowserRouter([
             {
                 path: "/addService",
                 element: <AddService></AddService>
+            },
+            {
+                path: "/faq",
+                element:<FAQ></FAQ>
             },
             {
                 path: "/update/:id",
