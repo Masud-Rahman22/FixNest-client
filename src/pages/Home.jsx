@@ -2,6 +2,7 @@ import Banner from "../components/Banner/Banner";
 import { Brands } from "../components/Brands/Brands";
 import { GallerySection } from "../components/Gallery_Section/GallerySection";
 import TopServices from "../components/Top_Services/TopServices";
+import WeWorkWith from "../components/Work_With/WeWorkWith";
 import AboutUs from "../components/about_us/AboutUs";
 import ContactUs from "../components/contact_us/ContactUs";
 import CountSection from "../components/count_section/CountSection";
@@ -21,6 +22,7 @@ const Home = () => {
             <GallerySection></GallerySection>
             <CountSection></CountSection>
             <Reviews></Reviews>
+            <WeWorkWith></WeWorkWith>
         </div>
     );
 };
