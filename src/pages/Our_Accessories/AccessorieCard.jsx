@@ -9,7 +9,7 @@ const AccessorieCard = ({ item, refetch }) => {
     const { id, name, type, price, picture, description } = item;
     let tableName = 'accessories';
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:5000/delete/${id}/${tableName}`)
+        axios.delete(`https://fix-nest-server-kappa.vercel.app/delete/${id}/${tableName}`)
             .then(res => {
                 console.log(res.data)
                 toast.error('item is deleted')

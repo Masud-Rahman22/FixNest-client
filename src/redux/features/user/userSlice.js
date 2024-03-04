@@ -1,7 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
 import auth from "../../../utils/firebase.config";
+import { GoogleAuthProvider } from "firebase/auth";
 
+const provider = new GoogleAuthProvider();
 
 const initialState = {
     name: "",
@@ -36,7 +38,7 @@ export const loginUser = createAsyncThunk(
     })
 export const googleUser = createAsyncThunk(
     "userSlice/googleUser",
-    async (provider) => {
+    async () => {
         const data = await signInWithPopup(auth,provider)
         console.log(data)
         return {

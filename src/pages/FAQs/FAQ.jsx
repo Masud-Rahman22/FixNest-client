@@ -18,7 +18,6 @@ const FAQ = () => {
                         <button onClick={() => handleToggle(idx)} className={`h-full flex justify-around flex-col items-center w-14 ${_.colorBg} text-white rounded-lg relative`}>
                             {isActive === idx && <span className={`w-0 h-0 ${_.colorBorder} border-r-[20px] border-b-[20px] border-r-transparent absolute rotate-[225deg] left-10 top-4`}></span>}
                             <p>{idx + 1}</p>
-                            <p className="rotate-[270deg]">Example</p>
                         </button>
                         {/* container */}
                         <div

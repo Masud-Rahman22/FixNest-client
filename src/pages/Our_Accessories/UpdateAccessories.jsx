@@ -11,7 +11,7 @@ export default function UpdateAccessories() {
     let tableName = 'accessories';
     const { handleSubmit, register } = useForm();
     const onSubmit = ({ itemName, itemType, price, itemPicture, itemDescription }) => {
-        axios.put(`http://localhost:5000/update/${tableName}/${id.id}`, { itemName, itemType, price, itemPicture, itemDescription, id })
+        axios.put(`https://fix-nest-server-kappa.vercel.app/update/${tableName}/${id.id}`, { itemName, itemType, price, itemPicture, itemDescription, id })
             .then(res => {
                 console.log(res.data),
                 toast.success('information updated')
@@ -21,7 +21,7 @@ export default function UpdateAccessories() {
     }
     
     useEffect(() => {
-        axios.get(`http://localhost:5000/${tableName}/${id.id}`)
+        axios.get(`https://fix-nest-server-kappa.vercel.app/${tableName}/${id.id}`)
             .then(res => setData(res.data))
             .catch(err => console.error(err))
     }, [id, tableName])

@@ -19,7 +19,7 @@ export default function AddService() {
     const { handleSubmit, register, reset } = useForm();
     const onSubmit = ({ serviceName, charge, servicePicture, serviceDescription }) => {
         console.log(serviceDescription, serviceName, servicePicture, charge)
-        axios.post('http://localhost:5000/create', {serviceName, charge, servicePicture, serviceDescription})
+        axios.post('https://fix-nest-server-kappa.vercel.app/create', {serviceName, charge, servicePicture, serviceDescription})
         .then(res => 
             console.log(res.data),
             toast.success('service added'),

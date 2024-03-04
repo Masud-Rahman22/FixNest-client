@@ -6,9 +6,7 @@ import { useDispatch } from 'react-redux';
 import { googleUser, loginUser } from '../../redux/features/user/userSlice';
 import toast, { Toaster } from 'react-hot-toast';
 import googleAnimation from '../../../public/assets/login/google/Animation - 1709367506310.json'
-import { GoogleAuthProvider } from "firebase/auth";
 
-const provider = new GoogleAuthProvider();
 const Login = () => {
     const { register, handleSubmit } = useForm();
     const dispatch = useDispatch()
@@ -25,7 +23,7 @@ const Login = () => {
     };
 
     const handleGoogleLogin = () =>{
-        dispatch(googleUser(provider))
+        dispatch(googleUser())
         .then(()=>{
                 toast.success('Welcome! you are logged in')
                 navigate('/')

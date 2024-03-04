@@ -20,7 +20,7 @@ export default function AddAccessories() {
     let counter = 0;
     const onSubmit = ({ itemName, itemType, price, itemPicture, itemDescription}) => {
         const id = counter++;
-        axios.post('http://localhost:5000/add', {id, itemName, itemType, price, itemPicture, itemDescription})
+        axios.post('https://fix-nest-server-kappa.vercel.app/add', {id, itemName, itemType, price, itemPicture, itemDescription})
         .then(res => 
             console.log(res.data),
             toast.success('Item added'),

@@ -10,7 +10,7 @@ const OurAccessories = () => {
     const { data: allItems = [], refetch } = useQuery({
         queryKey: ['infoOfAsset'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/accessories')
+            const res = await axios.get('https://fix-nest-server-kappa.vercel.app/accessories')
             setItems(res.data)
             return res.data
         }

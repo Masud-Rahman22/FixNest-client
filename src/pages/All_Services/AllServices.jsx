@@ -6,7 +6,7 @@ import ServiceCard from "./ServiceCard";
 const AllServices = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/service')
+        axios.get('https://fix-nest-server-kappa.vercel.app/service')
             .then(res => setServices(res.data))
             .catch(err => console.error(err.message))
     }, [])

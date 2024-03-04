@@ -38,9 +38,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/terms&conditions",
-                element: <PrivateRoute>
-                    <Terms_Cond></Terms_Cond>
-                </PrivateRoute>
+                element: <Terms_Cond></Terms_Cond>
             },
             {
                 path: "/ourWork",
@@ -48,23 +46,31 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/addAccessories",
-                element: <AddAccessories></AddAccessories>
+                element: <PrivateRoute>
+                    <AddAccessories></AddAccessories>
+                    </PrivateRoute>
             },
             {
                 path: "/ourAccessories",
-                element: <OurAccessories></OurAccessories>
+                element: <PrivateRoute>
+                    <OurAccessories></OurAccessories>
+                </PrivateRoute>
             },
             {
                 path: "/allServices",
-                element: <AllServices></AllServices>
+                element: <PrivateRoute>
+                    <AllServices></AllServices>
+                </PrivateRoute>
             },
             {
                 path: "/addService",
-                element: <AddService></AddService>
+                element: <PrivateRoute>
+                    <AddService></AddService>
+                </PrivateRoute>
             },
             {
                 path: "/faq",
-                element:<FAQ></FAQ>
+                element: <FAQ></FAQ>
             },
             {
                 path: "/update/:id",

@@ -6,7 +6,7 @@ import TopServicesCard from "./TopServicesCard";
 const TopServices = () => {
     const [topServices, setTopServices] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/service')
+        axios.get('https://fix-nest-server-kappa.vercel.app/service')
             .then(res => setTopServices(res.data))
             .catch(err => console.error(err.message))
     }, [])
