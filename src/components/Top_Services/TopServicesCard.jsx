@@ -10,7 +10,9 @@ const TopServicesCard = ({ topService }) => {
     // eslint-disable-next-line react/prop-types
     const { charge, description, name, picture, time } = topService;
     return (
-        <Card variant="outlined" sx={{ width: 320 }}>
+        <Card data-aos="fade-up"
+        data-aos-anchor-placement="center-center" data-aos-duration="3000"
+        data-aos-easing="ease-in-out" variant="outlined" sx={{ width: 320 }}>
             <CardOverflow>
                 <AspectRatio ratio="2">
                     <img

@@ -15,10 +15,12 @@ const ContactUs = () => {
     return (
 
         <div>
-            <h1 className="font-inter font-extrabold text-4xl text-center">Contact<span className="text-blue-400">-</span>Us</h1>
+            <h1 className="font-inter font-extrabold text-4xl text-center mt-20" data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500">Contact<span className="text-blue-400">-</span>Us</h1>
             <div className="flex justify-between items-center mx-20 mt-10 gap-20">
-
-                <form className="md:mx-10 flex-1">
+                <form className="md:mx-10 flex-1" data-aos="zoom-in-right" data-aos-duration="1000"
+                    data-aos-easing="ease-in-shine">
                     <h1 className="font-inter font-semibold text-2xl text-center underline pb-5 ">Online Inquiry</h1>
                     <div className="relative z-0 w-full mb-6 group">
                         <input type="text" name="title" id="title" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" required />
@@ -42,7 +44,8 @@ const ContactUs = () => {
 
                     <button className="p-3 bg-blue-500 hover:bg-blue-700 text-white w-full rounded-full">Submit</button>
                 </form>
-                <div className="flex-1 space-y-5">
+                <div className="flex-1 space-y-5" data-aos="zoom-in-lefts" data-aos-duration="1000"
+                    data-aos-easing="ease-in-shine">
                     <h1 className="font-inter font-semibold text-2xl text-center underline pb-5 ">Contact Details</h1>
                     <div className="flex items-center justify-start gap-5">
                         <IoCall className="w-[30px] h-[30px] text-blue-400" />

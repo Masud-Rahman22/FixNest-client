@@ -12,9 +12,12 @@ const CountSection = () => {
     };
     return (
         <div style={{ padding: "100px 40px", color: "black" }}>
-            <h1 className="font-inter font-extrabold text-4xl text-center my-10">Repair<span className="text-blue-400">-</span>Services<span className="text-blue-400">-</span>Breakdown</h1>
+            <h1 className="font-inter font-extrabold text-4xl text-center my-10" data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500">Repair<span className="text-blue-400">-</span>Services<span className="text-blue-400">-</span>Breakdown</h1>
             <ScrollTrigger onEnter={() => setCounterState(true)} onExit={() => setCounterState(false)} >
-                <div style={gridContainerStyle} className="border-2 border-blue-900">
+                <div style={gridContainerStyle} className="border-2 border-blue-900" data-aos="fade-up"
+                    data-aos-duration="3000">
                     <div style={{ textAlign: "center" }}>
                         <h2 style={{ fontSize: "60px", fontWeight: "bold" }}>{
                             counterState && <CountUp start={0} end={95} duration={3.40}></CountUp>

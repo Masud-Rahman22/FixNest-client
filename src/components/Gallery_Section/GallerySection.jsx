@@ -8,8 +8,11 @@ export const GallerySection = () => {
     const nextSlider = () => setCurrentSlider((currentSlider) => currentSlider === sliderImages.length - 1 ? 0 : currentSlider + 1);
     return (
         <div>
-            <h1 className="font-inter font-extrabold text-4xl text-center mb-10 mt-20">Meet<span className="text-blue-400">-</span>Our<span className="text-blue-400">-</span>Team</h1>
-            <div className="w-full mx-auto h-[540px] md:h-[670px] flex flex-col xl:flex-row items-center overflow-hidden gap-5 lg:gap-10 relative bg-black">
+            <h1 className="font-inter font-extrabold text-4xl text-center mb-10 mt-20" data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500">Meet<span className="text-blue-400">-</span>Our<span className="text-blue-400">-</span>Team</h1>
+            <div className="w-full mx-auto h-[540px] md:h-[670px] flex flex-col xl:flex-row items-center overflow-hidden gap-5 lg:gap-10 relative bg-black" data-aos="zoom-in-up" data-aos-duration="3000"
+                    data-aos-easing="ease-in-shine">
                 <div className="absolute w-full h-full flex items-center justify-between z-50 px-5">
                     {/* arrow left */}
                     <button onClick={prevSlider} className="flex justify-center items-center bg-white rounded-full w-6 h-6 md:w-8 md:h-8">

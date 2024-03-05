@@ -18,10 +18,10 @@ const Home = () => {
             <TopServices></TopServices>
             <AboutUs></AboutUs>
             <Brands></Brands>
-            <ContactUs></ContactUs>
             <GallerySection></GallerySection>
             <CountSection></CountSection>
             <Reviews></Reviews>
+            <ContactUs></ContactUs>
             <WeWorkWith></WeWorkWith>
         </div>
     );

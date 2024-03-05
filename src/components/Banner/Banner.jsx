@@ -5,10 +5,12 @@ const Banner = () => {
     return (
         <div>
             <div className="flex flex-row-reverse justify-between items-center mx-20">
-                <div className="w-[1200px]">
+                <div className="w-[1200px]" data-aos="fade-left" data-aos-duration="3000"
+                    data-aos-easing="ease-in-out">
                     <Lottie animationData={animation6}></Lottie>
                 </div>
-                <div className="font-inter space-y-4">
+                <div className="font-inter space-y-4" data-aos="fade-right" data-aos-duration="3000"
+                    data-aos-easing="ease-in-out">
                     <h1 className="text-6xl font-extrabold">Don't Worry.</h1>
                     <h1 className="text-6xl font-extrabold text-blue-400">We'll fix it.</h1>
                     <p className="text-xl font-normal w-10/12 text-blue-900 pt-5 pb-10">Welcome to Our <span className="text-blue-900">Fix</span><span className="text-blue-400">Nest</span>! Trust Us to Bring Your Phone Back to Life with Expert Service and Care!</p>
