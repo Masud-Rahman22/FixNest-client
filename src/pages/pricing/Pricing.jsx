@@ -13,8 +13,11 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 export default function Pricing() {
     return (
         <div>
-            <h1 className="font-inter font-extrabold text-4xl text-center mt-10">Pricing</h1>
-            <div className='flex items-center justify-center mx-10'>
+            <h1 className="font-inter font-extrabold text-4xl text-center mt-10" data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500">Pricing</h1>
+            <div className='flex items-center justify-center mx-10' data-aos="zoom-in-up" data-aos-duration="3000"
+                    data-aos-easing="ease-in-out">
                 <Box
                     sx={{
                         width: '100%',

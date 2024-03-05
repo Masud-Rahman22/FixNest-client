@@ -42,7 +42,7 @@ const ContactUs = () => {
                         </div>
                     </div>
 
-                    <button className="p-3 bg-blue-500 hover:bg-blue-700 text-white w-full rounded-full">Submit</button>
+                    <button className="hover:bg-[#0095FF] hover:scale-95 font-medium hover:text-white w-full py-2 rounded-full hover:shadow-xl   text-black shadow-[0px_0px_10px_#E2DADA] t duration-500 bg-blue-400">Submit</button>
                 </form>
                 <div className="flex-1 space-y-5" data-aos="zoom-in-lefts" data-aos-duration="1000"
                     data-aos-easing="ease-in-shine">

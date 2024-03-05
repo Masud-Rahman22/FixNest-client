@@ -45,6 +45,9 @@ export default function AddAccessories() {
                 overflow: 'auto',
                 resize: 'horizontal',
             }}
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+                    data-aos-easing="ease-in-out"
         >
             
             <Typography level="title-lg" startDecorator={<InfoOutlined />}>

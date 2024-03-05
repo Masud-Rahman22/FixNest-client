@@ -9,8 +9,13 @@ const FAQ = () => {
     };
     return (
         <div>
-            <h1 className="font-inter font-extrabold text-4xl text-center mb-10 mt-6">Our<span className="text-blue-400">-</span>Top<span className="text-blue-400">-</span>Services</h1>
-            <div className="w-fit mx-auto h-[500px] flex gap-1">
+            <h1 className="font-inter font-extrabold text-4xl text-center mb-10 mt-6" data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500">Our<span className="text-blue-400">-</span>Top<span className="text-blue-400">-</span>Services</h1>
+            <div className="w-fit mx-auto h-[500px] flex gap-1" data-aos="fade-right"
+                data-aos-duration="3000"
+                    data-aos-easing="ease-in-out"
+                >
 
                 {accordionData.map((_, idx) => (
                     <div key={idx} className="flex">

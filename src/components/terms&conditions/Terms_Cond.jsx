@@ -4,8 +4,12 @@ import terms from '../../../public/assets/terms&conditions/Animation - 170924144
 const Terms_Cond = () => {
     return (
         <div className="mx-20 text-center">
-            <h1 className="font-inter font-extrabold text-4xl text-center mt-3">Terms<span className="text-blue-400">-</span>&<span className="text-blue-400">-</span>Conditions</h1>
-            <div className="block">
+            <h1 className="font-inter font-extrabold text-4xl text-center mt-3" data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500">Terms<span className="text-blue-400">-</span>&<span className="text-blue-400">-</span>Conditions</h1>
+            <div className="block" data-aos="fade-left"
+                data-aos-duration="3000"
+                    data-aos-easing="ease-in-out">
                 <div className="flex items-center justify-center my-10">
                     <Lottie className="w-52" animationData={terms}></Lottie>
                 </div>

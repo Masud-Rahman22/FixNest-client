@@ -10,7 +10,8 @@ export default function ServiceCard({service}) {
     // eslint-disable-next-line react/prop-types
     const {charge,description,name,picture,time} = service;
     return (
-        <Card variant="outlined" sx={{ width: 320 }}>
+        <Card variant="outlined" sx={{ width: 320 }} data-aos="zoom-in" data-aos-duration="3000"
+        data-aos-easing="ease-in-out">
             <CardOverflow>
                 <AspectRatio ratio="2">
                     <img

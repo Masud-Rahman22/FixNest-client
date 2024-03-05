@@ -17,6 +17,7 @@ import AddAccessories from "../pages/Add_Accessories/AddAccessories";
 import OurAccessories from "../pages/Our_Accessories/OurAccessories";
 import UpdateAccessories from "../pages/Our_Accessories/UpdateAccessories";
 import FAQ from "../pages/FAQs/FAQ";
+import Profile from "../pages/profile/Profile";
 
 const Router = createBrowserRouter([
     {
@@ -48,19 +49,15 @@ const Router = createBrowserRouter([
                 path: "/addAccessories",
                 element: <PrivateRoute>
                     <AddAccessories></AddAccessories>
-                    </PrivateRoute>
+                </PrivateRoute>
             },
             {
                 path: "/ourAccessories",
-                element: <PrivateRoute>
-                    <OurAccessories></OurAccessories>
-                </PrivateRoute>
+                element:<OurAccessories></OurAccessories>
             },
             {
                 path: "/allServices",
-                element: <PrivateRoute>
-                    <AllServices></AllServices>
-                </PrivateRoute>
+                element: <AllServices></AllServices>
             },
             {
                 path: "/addService",
@@ -74,7 +71,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/update/:id",
-                element: <UpdateAccessories></UpdateAccessories>
+                element: <PrivateRoute><UpdateAccessories></UpdateAccessories></PrivateRoute>
             },
             {
                 path: "/login",
@@ -83,6 +80,10 @@ const Router = createBrowserRouter([
             {
                 path: "/signUp",
                 element: <SignUp></SignUp>
+            },
+            {
+                path: "/profile",
+                element: <Profile></Profile>
             },
         ]
     },

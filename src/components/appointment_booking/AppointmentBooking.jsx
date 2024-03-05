@@ -15,11 +15,14 @@ const AppointmentBooking = () => {
     };
     return (
         <div>
-        <h1 className="font-inter font-extrabold text-4xl text-center mt-3">Appointment<span className="text-blue-400">-</span>Booking</h1>
+        <h1 className="font-inter font-extrabold text-4xl text-center mt-3" data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500">Appointment<span className="text-blue-400">-</span>Booking</h1>
         <div className=' mx-14 mt-20'>
             <div className="flex items-center justify-between">
             <div className='flex-1'>
-            <form className="md:mx-10 flex-1">
+            <form className="md:mx-10 flex-1" data-aos="fade-right" data-aos-duration="3000"
+                    data-aos-easing="ease-in-out">
                     <h1 className="font-inter font-semibold text-2xl text-center underline pb-5 ">Information about you</h1>
                     <div className="relative z-0 w-full mb-6 group">
                         <input type="text" name="title" id="title" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" required />
@@ -46,13 +49,14 @@ const AppointmentBooking = () => {
                     </div>
                 </form>
             </div>
-            <div className='flex-1 calendar-container'>
+            <div className='flex-1 calendar-container' data-aos="fade-left" data-aos-duration="3000"
+                    data-aos-easing="ease-in-out">
                 <Calendar onChange={onChange} style={calendarStyle} value={date} className="custom-calendar"/>
             </div>
         </div>
-        <div className='flex justify-center items-center gap-10 mt-10'>
-        <button className=' p-3 bg-blue-500 hover:bg-blue-700 text-white lg:w-96'>Cancel</button>
-        <button className='p-3 bg-blue-500 hover:bg-blue-700 text-white lg:w-96'>Book Now</button>
+        <div className='flex justify-center items-center gap-10 mr-12 mt-10'>
+        <button className='p-3 bg-blue-500 hover:bg-blue-700 text-white lg:w-96' data-aos="zoom-in" data-aos-duration="3000">Cancel</button>
+        <button className='p-3 bg-blue-500 hover:bg-blue-700 text-white lg:w-96' data-aos="zoom-in" data-aos-duration="3000">Book Now</button>
         </div>
         </div>
         </div>

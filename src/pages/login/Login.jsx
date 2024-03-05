@@ -40,7 +40,8 @@ const Login = () => {
             <div className="ml-32 flex-1">
                 <Lottie animationData={animationLogin}></Lottie>
             </div>
-            <div className="relative flex flex-col text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border flex-1 lg:pl-32">
+            <div className="relative flex flex-col text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border flex-1 lg:pl-32" data-aos="fade-down" data-aos-duration="1000"
+                    data-aos-easing="ease-in-out">
                 <h4 className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
                     Login
                 </h4>
