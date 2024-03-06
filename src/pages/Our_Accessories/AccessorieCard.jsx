@@ -19,7 +19,7 @@ const AccessorieCard = ({ item, refetch }) => {
     }
     return (
         <div className="px-4 py-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-6 mx-auto bg-white flex flex-col" data-aos="zoom-out" data-aos-duration="3000"
-        data-aos-easing="ease-in-out">
+            data-aos-easing="ease-in-out">
             <Toaster></Toaster>
             <div className="relative">
                 <div className="flex justify-between items-center absolute top-4 left-4 right-4">
@@ -48,7 +48,28 @@ const AccessorieCard = ({ item, refetch }) => {
             </div>
             <div className="flex items-center justify-center flex-wrap gap-6 text-sm">
                 <div className="flex items-center justify-center flex-wrap gap-6 text-sm md:text-base">
-                    <button onClick={() => handleDelete(id)} className="px-4 py-2 rounded-lg bg-red-500 hover:bg-red-800 duration-300 hover:scale-105 text-white font-semibold font-sans">Delete Item</button>
+                    <button
+                    onClick={()=>handleDelete(id)}
+                        className="inline-flex items-center px-4 py-2 bg-red-600 transition ease-in-out delay-75 hover:bg-red-700 text-white text-sm font-medium rounded-md hover:-translate-y-1 hover:scale-110"
+                    >
+                        <svg
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            className="h-5 w-5 mr-2"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                                strokeWidth="2"
+                                strokeLinejoin="round"
+                                strokeLinecap="round"
+                            ></path>
+                        </svg>
+
+                        Delete Item
+                    </button>
+
                     <Link to={`/update/${id}`} className="flex items-center gap-2">
                         <GrDocumentUpdate />
                         <span className="text-black">Update</span>

@@ -18,6 +18,7 @@ import OurAccessories from "../pages/Our_Accessories/OurAccessories";
 import UpdateAccessories from "../pages/Our_Accessories/UpdateAccessories";
 import FAQ from "../pages/FAQs/FAQ";
 import Profile from "../pages/profile/Profile";
+import Dashboard from "../components/dashboard/Dashboard";
 
 const Router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const Router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>
+            },
+            {
+                path: "/dashboard",
+                element: <Dashboard></Dashboard>
             },
             {
                 path: "/pricing",

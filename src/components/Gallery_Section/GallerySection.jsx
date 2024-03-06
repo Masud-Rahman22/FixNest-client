@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 export const GallerySection = () => {
     const [currentSlider, setCurrentSlider] = useState(0);
     const sliderImages = [{ img: "https://i.ibb.co/2tyBX80/trans-person-working-office-with-colleagues.jpg", }, { img: "https://i.ibb.co/Zfx637v/front-view-person-repairing-motherboard.jpg", }, { img: "https://i.ibb.co/26DCxQ1/male-technician-working-computer-ram.jpg", }, { img: "https://i.ibb.co/5s2Wcyz/your-service-shop-worker.jpg", }, { img: "https://i.ibb.co/9GwrzTk/two-males-looking-pad.jpg", }, { img: "https://i.ibb.co/YyFM3d8/professional-tattooer-black-gloves-holding-tattoo-machine-hand-preparing-tattoo-modern-studio.jpg", },];
@@ -12,7 +11,7 @@ export const GallerySection = () => {
                 data-aos-easing="linear"
                 data-aos-duration="1500">Meet<span className="text-blue-400">-</span>Our<span className="text-blue-400">-</span>Team</h1>
             <div className="w-full mx-auto h-[540px] md:h-[670px] flex flex-col xl:flex-row items-center overflow-hidden gap-5 lg:gap-10 relative bg-black" data-aos="zoom-in-up" data-aos-duration="3000"
-                    data-aos-easing="ease-in-shine">
+                data-aos-easing="ease-in-shine">
                 <div className="absolute w-full h-full flex items-center justify-between z-50 px-5">
                     {/* arrow left */}
                     <button onClick={prevSlider} className="flex justify-center items-center bg-white rounded-full w-6 h-6 md:w-8 md:h-8">

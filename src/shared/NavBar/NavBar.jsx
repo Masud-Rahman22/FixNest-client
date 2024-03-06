@@ -22,7 +22,7 @@ import "./NavBar.css"
 function NavBar() {
     const {user} = useContext(AuthContext)
     const dispatch = useDispatch()
-    const handleLogout = () =>{
+    const handleLogout = () => {
         signOut(auth)
         dispatch(logOut())
     }
@@ -30,7 +30,43 @@ function NavBar() {
     const settings = <>
         <li><NavLink to="/profile">Profile</NavLink></li>
         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
-        <button onClick={handleLogout}>Logout</button>
+        {
+            user ? <button
+            onClick={handleLogout}
+                className="overflow-hidden relative w-32 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group"
+            >
+                Logout
+                <span
+                    className="absolute w-36 h-32 -top-8 -left-2 bg-sky-200 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-right"
+                ></span>
+                <span
+                    className="absolute w-36 h-32 -top-8 -left-2 bg-sky-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-right"
+                ></span>
+                <span
+                    className="absolute w-36 h-32 -top-8 -left-2 bg-sky-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-right"
+                ></span>
+                <span
+                    className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10"
+                >ba-bye!</span>
+            </button> : <button
+        onClick={handleLogout}
+            className="overflow-hidden relative w-32 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group"
+        >
+            Hey There
+            <span
+                className="absolute w-36 h-32 -top-8 -left-2 bg-sky-200 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-right"
+            ></span>
+            <span
+                className="absolute w-36 h-32 -top-8 -left-2 bg-sky-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-right"
+            ></span>
+            <span
+                className="absolute w-36 h-32 -top-8 -left-2 bg-sky-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-right"
+            ></span>
+            <span
+                className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10"
+            >Welcome!</span>
+        </button>
+        }
     </>
 
     const navLinks = <>
@@ -134,7 +170,8 @@ function NavBar() {
                 Terms & Conditions
             </NavLink>
         </li>
-        <li>
+        {
+            user ? '' : <li>
             <NavLink
                 to="/login"
                 className={({ isActive, isPending }) =>
@@ -144,6 +181,7 @@ function NavBar() {
                 Login
             </NavLink>
         </li>
+        }
     </>
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
