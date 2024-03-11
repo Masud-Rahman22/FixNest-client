@@ -18,7 +18,7 @@ const AccessorieCard = ({ item, refetch }) => {
             .catch(err => console.error(err))
     }
     return (
-        <div className="px-4 py-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-6 mx-auto bg-white flex flex-col" data-aos="zoom-out" data-aos-duration="3000"
+        <div className="px-4 py-8 shadow-lg max-w-[310px] font-sans rounded-xl space-y-6 mx-auto bg-white flex flex-col" data-aos="zoom-out" data-aos-duration="3000"
             data-aos-easing="ease-in-out">
             <Toaster></Toaster>
             <div className="relative">

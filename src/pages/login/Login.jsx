@@ -3,9 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import animationLogin from '../../../public/assets/login/Animation - 1709294276938.json'
 import { useDispatch } from 'react-redux';
-import { googleUser, loginUser } from '../../redux/features/user/userSlice';
+import { loginUser } from '../../redux/features/user/userSlice';
 import toast, { Toaster } from 'react-hot-toast';
 import googleAnimation from '../../../public/assets/login/google/Animation - 1709367506310.json'
+import { signInWithPopup } from 'firebase/auth';
+import auth from '../../utils/firebase.config';
+import { GoogleAuthProvider } from "firebase/auth";
+
+const provider = new GoogleAuthProvider();
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
@@ -23,7 +28,7 @@ const Login = () => {
     };
 
     const handleGoogleLogin = () =>{
-        dispatch(googleUser())
+        signInWithPopup(auth,provider)
         .then(()=>{
                 toast.success('Welcome! you are logged in')
                 navigate('/')

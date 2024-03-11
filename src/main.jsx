@@ -11,17 +11,21 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import { FacebookProvider, CustomChat } from 'react-facebook';
 
 const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <FacebookProvider appId="858033186082162" chatSupport>
+      <CustomChat pageId="272973389225647" minimized={true} />
+    </FacebookProvider>
     <Toaster />
     <Provider store={store}>
-    <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <RouterProvider router={Router} />
-    </AuthProvider>
-    </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <RouterProvider router={Router} />
+        </AuthProvider>
+      </QueryClientProvider>
     </Provider>
   </React.StrictMode>,
 )

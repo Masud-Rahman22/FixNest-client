@@ -29,49 +29,49 @@ const OurAccessories = () => {
                     <Tab className="text-gray-700 py-4 px-6 cursor-pointer border-b-2 border-transparent hover:border-gray-500 focus:outline-none">Realme</Tab>
                 </TabList>
                 <TabPanel>
-                    <div className="grid grid-cols-4 gap-5 ml-10 mt-10">
+                    <div className="grid grid-cols-4 mt-10">
                         {
                             allItems?.map(item => <AccessorieCard key={item.id} item={item} refetch={refetch}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="grid grid-cols-4 gap-5 ml-10 mt-10">
+                    <div className="grid grid-cols-4 mt-10">
                         {
                             allItems?.slice(0,10).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="grid grid-cols-4 gap-5 ml-10 mt-10">
+                    <div className="grid grid-cols-4 mt-10">
                         {
                             allItems?.slice(10,20).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="grid grid-cols-4 gap-5 ml-10 mt-10">
+                    <div className="grid grid-cols-4 mt-10">
                         {
                             allItems?.slice(20,30).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="grid grid-cols-4 gap-5 ml-10 mt-10">
+                    <div className="grid grid-cols-4 mt-10">
                         {
                             allItems?.slice(30,40).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="grid grid-cols-4 gap-5 ml-10 mt-10">
+                    <div className="grid grid-cols-4 mt-10">
                         {
                             allItems?.slice(40,50).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="grid grid-cols-4 gap-5 ml-10 mt-10">
+                    <div className="grid grid-cols-4 mt-10">
                         {
                             allItems?.slice(50,60).map(item => <AccessorieCard key={item.id} item={item}></AccessorieCard>)
                         }
